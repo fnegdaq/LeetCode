@@ -33,6 +33,7 @@ import UIKit
 // 4: 22 211 112 212 121 5
 // f(n) = f(n-1) + f(n-2)
 
+// 自底向上的动态规划
 func climbStairs(_ n: Int) -> Int {
     if n <= 2 { return n }
     var f1 = 1, f2 = 2, f3 = 3

@@ -20,6 +20,7 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+// 左右指针两边扫先要是有序的数组
 func threeSum(_ nums: [Int]) -> [[Int]] {
     if nums.count < 3 { return [] }
     let sortArray = nums.sorted()
@@ -27,11 +28,13 @@ func threeSum(_ nums: [Int]) -> [[Int]] {
     for i in 0 ..< sortArray.count - 2 {
         if sortArray[i] > 0 { break }
         if i > 0 && sortArray[i] == sortArray[i - 1] { continue }
+        // 跳过起点相同的
         var left = i + 1, right = sortArray.count - 1
         while left < right {
             let result = sortArray[i] + sortArray[left] + sortArray[right]
             if result == 0 {
                 res.append([sortArray[i], sortArray[left], sortArray[right]])
+                // 跳过第二第三个数相同的结果
                 repeat {
                     left += 1
                 } while left < right && sortArray[left] == sortArray[left - 1]

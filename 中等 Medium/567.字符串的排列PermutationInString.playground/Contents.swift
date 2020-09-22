@@ -37,7 +37,6 @@ class Solution {
         for c in s1 {
             needs[c] != nil ? (needs[c]! += 1) : (needs[c] = 1)
         }
-        print(needs)
         while right < s2.count {
             let c = s2[s2.index(s2.startIndex, offsetBy: right)]
             right += 1

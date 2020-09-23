@@ -56,10 +56,10 @@ class Solution {
                 let c = s2[s2.index(s2.startIndex, offsetBy: left)]
                 left += 1
                 if needs.keys.contains(c) {
-                    windows[c]! -= 1
                     if windows[c] == needs[c] {
                         match -= 1
                     }
+                    windows[c]! -= 1
                 }
             }
         }

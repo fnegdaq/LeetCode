@@ -22,16 +22,21 @@
 // 出现零时 2*5, 2的出现个数必然大于5, 所有找到一个5必然可以找到一个2与之对应
 func trailingZeroes(_ n: Int) -> Int {
     var count = 0
-    for i in 1 ... n {
-        var temp = i
-        while temp > 0 {
-            if temp%5 == 0 {
-                count += 1
-                temp = temp/5
-            } else {
-                break
-            }
-        }
+    var temp = n
+//    for i in 1 ... n {
+//        var temp = i
+//        while temp > 0 {
+//            if temp%5 == 0 {
+//                count += 1
+//                temp = temp/5
+//            } else {
+//                break
+//            }
+//        }
+//    }
+    while temp > 0 {
+        count += temp/5
+        temp = temp/5
     }
     return count
 }

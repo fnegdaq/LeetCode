@@ -1,4 +1,13 @@
 */.DS_Store
 .DS_Store
 .xcworkspace
-*/..xcworkspace
+*/.xcworkspace
+*/.xcuserstate
+ 
+*.xctimeline
+*.xcuserstate
+*.plist
+*.xctimeline
+*.xctimeline
+*.xcworkspacedata
+*.xcuserstate

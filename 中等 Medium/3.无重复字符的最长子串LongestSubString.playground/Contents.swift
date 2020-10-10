@@ -25,6 +25,7 @@
 
 func lengthOfLongestSubstring(_ s: String) -> Int {
     if s.count == 0 { return 0 }
+    /*
     var window = [Character: Int]()
     /// 指针起点, 结束, 最长子串长度
     var start = 0, end = 0, ans = 0
@@ -40,6 +41,33 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
         window[char] = end
     }
     return ans
+     */
+    
+    /**
+     
+         var longest = 0, startIndex = 0
+         var charMap: [Character: Int] = [:]
+
+         for (index, char) in s.enumerated() {
+             if let foundIndex = charMap[char] {
+                 startIndex = max(foundIndex+1, startIndex)
+             }
+             longest = max(longest, index - startIndex + 1)
+             charMap[char] = index
+         }
+         return longest
+        
+     */
+    
+    let unicode = s.unicodeScalars.map { Int($0.value) }
+    var indexs = Array(repeating: -1, count: 128)
+    var left = -1, maxCount = 0
+    for i in 0 ..< unicode.count {
+        left = max(left, indexs[unicode[i]])
+        indexs[unicode[i]] = i
+        maxCount = max(maxCount, i - left)
+    }
+    return maxCount
 }
 
 lengthOfLongestSubstring("pwwkew")

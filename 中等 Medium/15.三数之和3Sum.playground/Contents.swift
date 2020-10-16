@@ -42,13 +42,9 @@ func threeSum(_ nums: [Int]) -> [[Int]] {
                     right -= 1
                 } while left < right && sortArray[right] == sortArray[right + 1]
             } else if result < 0 {
-                repeat {
-                    left += 1
-                } while left < right && sortArray[left] == sortArray[left - 1]
+                left += 1
             } else {
-                repeat {
-                    right -= 1
-                } while left < right && sortArray[right] == sortArray[right + 1]
+                right -= 1
             }
         }
     }
